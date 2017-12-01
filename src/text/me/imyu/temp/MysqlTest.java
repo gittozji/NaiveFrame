@@ -25,5 +25,8 @@ public class MysqlTest {
         while (rs.next()) {
             System.out.println(rs.getString("username"));
         }
+        rs.close();
+        preparedStatement.close();
+        connection.close();
     }
 }
