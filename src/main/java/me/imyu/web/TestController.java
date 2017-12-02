@@ -1,6 +1,8 @@
 package me.imyu.web;
 
 import me.imyu.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +18,7 @@ import java.util.Map;
  */
 @Controller
 public class TestController {
+    private static final Logger LOGGER = LogManager.getLogger();
     @Autowired
     UserService userService;
 
@@ -37,6 +40,9 @@ public class TestController {
         Map map = new HashMap();
         map.putAll(param);
         map.put("key", "我是value");
+        LOGGER.info("log4j输出：");
+        LOGGER.info(map);
+        LOGGER.info("----------");
         return map;
     }
 }
