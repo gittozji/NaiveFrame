@@ -15,6 +15,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
     @Autowired
     UserDao userDao;
+    @Override
     public List<User> getAll() {
         return userDao.queryAll();
     }
