@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     <p th:text="你好，Thymeleaf。">hello thymeleaf</p>
+
+    <script type="text/javascript" th:src="@{/static/js/jquery-3.2.1.min.js}"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var item;
+        var request = $.extend({}, {c_trust: "你好，world"});
+        $.ajaxSetup({async: false, contentType: "application/json; charset=utf-8"});
+        $.post(/*[[@{/test/convertMessage.json}]]*/"", JSON.stringify(request), function (response) {
+            item = response;
+        });
+        alert(item);
+        /*]]>*/
+    </script>
 </body>
 </html>

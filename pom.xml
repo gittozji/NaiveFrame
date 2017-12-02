@@ -90,6 +90,14 @@
             <version>2.1.1</version>
         </dependency>
 
+        <!-- 格式转换 最小包 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.38</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <finalName>naive-frame</finalName>
